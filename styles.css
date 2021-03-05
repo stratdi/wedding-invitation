@@ -1,0 +1,296 @@
+@import "fonts.css";
+
+:root {
+    --bg-color:thistle;
+    --postal-card-height:11cm;
+    --postal-card-width:22cm;
+    --postal-card-tab-height:4cm;
+    --postal-card-bg:#EEEEEE;
+    --invitation-height:9.5cm;
+    --invitation-width:21cm;
+    --invitation-bg:#cfae93;
+    --info-bg:white;
+}
+
+html {
+    width: 100%;
+    height:100%;
+}
+body {
+    background: var(--bg-color);
+}
+section {
+    height: 100%;
+    /* display:flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.hidden {
+    opacity:0;
+    transition: 0.5s;
+}
+
+.move-right {
+    left: 55% !important;
+    transition: 0.5s;
+}
+.move-left {
+    left: 45% !important;
+    transition: 0.5s;
+}
+.move-left-out {
+    left: -50% !important;
+    transition: 0.8s;
+}
+/**********************/
+/* POSTAL CARD        */
+/**********************/
+#postal-card, #postal-card-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+#postal-card-back {
+    background:lightgray;
+    z-index:0;
+    height:calc(var(--postal-card-height) - 0.2cm);
+    width:var(--postal-card-width);
+
+}
+#postal-card {
+    height:var(--postal-card-height);
+    width:var(--postal-card-width);
+    background:var(--postal-card-bg);
+    clip-path: polygon(0 0, 4% 37%, 96% 37%, 100% 0, 100% 100%, 0 100%);
+    margin:0 auto;
+    z-index:4;
+}
+#tab {
+    height:calc(var(--postal-card-tab-height) * 2);
+    width:var(--postal-card-width);
+    background:white;
+    clip-path:polygon(0 50%, 100% 50%, 96% 100%, 4% 100%);
+    cursor:pointer;
+    transition: 0.8s;
+    margin:0 auto;
+   
+}
+#tab-wrap {
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    transition: 0.5s;
+
+    position: absolute;
+    top: calc(50.4% - var(--postal-card-height) / 2);
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index:5;
+}
+
+/* Effects */
+#tab-wrap:hover {
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.158));
+}
+.opened {
+    clip-path:polygon(0 50%, 100% 50%, 96% 0, 4% 0) !important;
+}
+.wrap-noshadow {
+    filter: none !important;
+}
+
+/**********************/
+/* INVITATION         */
+/**********************/
+ #invitation {
+    clip-path: polygon(100% 40%, 100% 0, 0 0, 0 100%, 100% 100%, 100% 60%, 97% 58%, 96% 56%, 95% 52%, 95% 47%, 96% 44%, 97% 42%);
+    height:var(--invitation-height);
+    width:var(--invitation-width);
+    background-color:var(--invitation-bg);
+    z-index:4;
+}
+
+.noisy {
+    background-image: url(img/whitenoise2.png);
+}
+#invitation-bottom {
+    width:100%;
+    height:98%;
+    background-image:url(invitation-bottom.png);
+    background-repeat:no-repeat;
+    background-position:bottom;
+}
+#invitation-wrap {
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index:3;
+    cursor: pointer;
+}
+
+#invitation-text {
+    position: relative;
+    top: 70;
+    text-align: center;
+    margin-bottom: -143;
+}
+#invitation-text .names {
+    display:block;
+    font-size: 50px;
+    font-family: 'Hijrnotes';
+}
+#invitation-text .info {
+    font-size: 20px;
+    font-family: 'MrsEavesItalic';
+    margin-top:20px;
+    margin-left:54px;
+    letter-spacing: 3.4;
+}
+#invitation-text .info .date {
+    padding-right:10px;
+}
+#invitation-text .info .year {
+    padding-left:10px;
+    border-left:1.5px solid black;
+}
+#invitation-text hr {
+    width: 300px;
+    text-align: center;
+    border: none;
+    background-color: black;
+    color: #ccc;
+    height: 1px;
+} 
+
+/**********************/
+/* INFO               */
+/**********************/
+#info {
+    height:calc(var(--invitation-height) - .1cm);
+    width:calc(var(--invitation-width) - .1cm);
+    background-color:var(--info-bg);
+    background-image:url(info.png);
+    background-size: 101.5%;
+
+    position: absolute;
+    top: 50%;
+    left: 49.90%;
+    transform: translate(-50%, -50%); 
+    z-index: 2;
+    cursor:pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+#info-text, #summary-text {
+    padding-top:1px;
+    padding-left:230px;
+}
+#info-text h1 {
+    font-family: 'Hijrnotes';
+    font-size: 45px;
+    font-weight: 400;
+    margin-bottom:10px;
+    padding-left: 100px;
+}
+#info-text .msg {
+    font-family: 'MrsEavesItalic';
+    letter-spacing: 0.8;
+    font-size:16px;
+    text-align:center;
+    line-height:24px;
+    width:400px;
+    display:block;
+}
+#info-text .bye {
+    letter-spacing: 2.2;
+    font-family: 'AvantGarde';
+    text-transform: uppercase;
+    text-align:center;
+    width:400px;
+    display:block;
+    margin:30px 0px 30px 0px;
+    font-weight: 700;
+}
+#info-text .address {
+    font-family: 'MrsEavesItalic';
+    font-size:14px;
+    text-align:center;
+    width:400px;
+    display:block;
+}
+
+/**********************/
+/* SUMMARY            */
+/**********************/
+#summary {
+    height:calc(var(--invitation-height) - .1cm);
+    width:calc(var(--invitation-width) - .1cm);
+    background-color:var(--info-bg);
+    background-image:url(summary.png);
+    background-size: 101.5%;
+}
+
+#summary-text h1 {
+    font-family: 'Hijrnotes';
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom:5px;
+    padding-left: 35px;
+}
+#summary-text .msg {
+    font-family: 'MrsEavesItalic';
+    letter-spacing: 0.8;
+    font-size:16px;
+    text-align:center;
+    line-height:24px;
+    width:400px;
+    display:block;
+}
+#summary-text .date {
+    letter-spacing: 3.2;
+    font-family: 'AvantGarde';
+    text-transform: uppercase;
+    text-align:center;
+    width:400px;
+    display:block;
+    font-size: 14px;
+    margin:30px 0px 30px 0px;
+    font-weight: 700;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    padding:10px 0px 10px 0px;
+}
+#summary-text .address {
+    font-family: 'MrsEavesItalic';
+    font-size:14px;
+    text-align:center;
+    width:400px;
+    display:block;
+}
+#summary-text .info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    margin-left:-205px
+}
+#summary-text .info h1 {
+    font-family: 'Hijrnotes';
+    font-size: 40px;
+    font-weight: 400;
+    line-height:24px;
+    margin:0px;
+    padding-left: 0px; 
+    display:block;
+    height: 60px;
+    text-align: center;
+}
+#summary-text .info .hour {
+    font-family: 'AvantGarde';
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    padding-left:110px;
+}

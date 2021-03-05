@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js"></script>
+    <script src="swiped-events.js"></script>
+    <script src="actions.js"></script>
+</head>
+
+<body>
+     <!--Add buttons to initiate auth sequence and sign out-->
+     <button id="authorize_button" style="display: none;">Authorize</button>
+     <button id="signout_button" style="display: none;">Sign Out</button>
+    <section>
+        <div id="tab-wrap">
+            <div id="tab">
+
+            </div>
+        </div>
+        <div id="postal-card">
+
+        </div>
+        <div id="postal-card-back">
+
+        </div>
+        <div id="invitation-wrap">
+            <div id="invitation" class="noisy">
+                <div id="invitation-text">
+                    <span class="names">Carme i Jordi</span>
+                    <hr />
+                    <div class="info"><span class="date">divendres 30 juliol</span> <span class="year">2021</span></div>
+                </div>
+                <div id="invitation-bottom">
+                </div>
+            </div>
+        </div>
+        <div id="info">
+            <div id="info-text">
+                <h1>Invitació</h1>
+                <span class="msg">Ens complau convidar-los a la celebració de les nostres noces
+                    en la Possessió del Marqués (Son Collell) a les HH:mmh</span>
+                <span class="bye">Us esperem!</span>
+                <span class="address">c/ blabla | 07XXX | Montuiri</span>
+            </div>
+        </div>
+
+        <!--<div id="summary">
+                <div id="summary-text">
+                    <h1>Carme i Jordi</h1>
+                    <span class="msg">Estam molt feliços de convidar-los</span>
+                    <span class="date">Divendres 16 juliol 2021</span>
+                    <span class="info">
+                        <div id="welcome">
+                            <h1>welcome drink</h1>
+                            <span class="hour">18 h</span>
+                        </div>
+                        <div id="ceremony">
+                            <h1>cerimònia</h1>
+                            <span class="hour">19 h</span>
+                        </div>
+                        <div id="dinner">
+                            <h1>aperitiu</h1>
+                            <span class="hour">20 h</span>
+                        </div>
+                    </span>
+                </div>
+            </div> -->
+    </section>
+    <script src="sheets.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
+</body>
+
+</html>

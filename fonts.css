@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Hijrnotes';
+    src: local('Hijrnotes'),
+         local('Hijrnotes Regular'),
+         local('Hijrnotes-Regular'),
+         url(fonts/hijrnotesbtce-webfont.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'MrsEavesItalic';
+    src: local('MrsEavesItalic'),
+         local('MrsEavesItalic Italic'),
+         local('MrsEavesItalic-Italic'),
+         url(fonts/MrsEavesItalic_Italic.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: 'AvantGarde';
+    src: local('Avant Garde'),
+        local('Avant Garde Italic'),
+        local('Avant Garde-Italic'),
+        url(fonts/avant_garde_gothic_extralight.ttf) format('truetype');
+}
