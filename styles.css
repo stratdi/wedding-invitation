@@ -400,11 +400,13 @@ section {
     color: white;
     border-radius: 50%;
 
-    width: 150px;
+    width: 20vh;
+	font-size:3vh;
     padding: 30px 15px 30px 15px;
     font-family: 'AvantGarde';
     font-weight: bold;
     transition:0.1s ease-in-out;
+	z-index:1000000;
 }
 .i18n-assistancebutton:hover {
     background: var(--button-hover-color);
