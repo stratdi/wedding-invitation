@@ -1,0 +1,54 @@
+#tap {transition: 0.5s;
+    position: absolute;
+    top:calc(50% - 100px);
+    left:calc(50% - 250px);    
+    transform: translate(-50%, -50%); 
+    height: 100px;
+    width: 100px;
+    -webkit-animation: tapchange 1s infinite;
+    animation: 1s infinite tapchange;
+    z-index:99;
+    filter:opacity(50%);
+}
+
+#swipe {
+    transition: 0.5s;
+    position: absolute;
+    top:calc(50% + 50px);
+    left:calc(50% + 240px);    
+    transform: translate(-50%, -50%); 
+    height: 100px;
+    width: 100px;
+    -webkit-animation: swipe 2s infinite;
+    animation: 2s infinite swipe;
+    z-index:99;
+    filter:opacity(50%);
+    background-image: url(img/gestures/hand.png);
+}
+
+@keyframes swipe {
+    100%    {left: calc(50% - 350px)}
+ }
+  /* Chrome, Safari, Opera */
+@-webkit-keyframes swipe {
+    100%    {left: calc(50% - 350px)}
+}
+
+@keyframes tapchange {
+    0%      {background-image: url(img/gestures/hand.png);}
+    100%    {    
+        left: calc(50% - 260px);
+        background-image: url(img/gestures/tapped.png);
+        top: calc(50% - 103px);
+    }
+ }
+  /* Chrome, Safari, Opera */
+@-webkit-keyframes tapchange {
+    0%      {background-image: url(img/gestures/hand.png);}
+    100%    {    
+        left: calc(50% - 260px);
+        background-image: url(img/gestures/tapped.png);
+        top: calc(50% - 103px);
+    }
+}
+   
