@@ -21,3 +21,11 @@
         local('Avant Garde-Italic'),
         url(fonts/avant_garde_gothic_extralight.ttf) format('truetype');
 }
+
+@font-face {
+    font-family: 'Ekaterina';
+    src: local('Ekaterina'),
+        local('Ekaterina'),
+        local('Ekaterina'),
+        url(fonts/Ekaterina.ttf) format('truetype');
+}

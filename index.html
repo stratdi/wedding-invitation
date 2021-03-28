@@ -1,24 +1,46 @@
 <html>
 
 <head>
+    <title>Carme & Jordi | Invitació </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gestures.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js"></script>
-    <script src="swiped-events.js"></script>
-    <script src="actions.js"></script>
+    <script src="js/hammer.min.js" />
+    <script src="js/swiped-events.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/sheets.js"></script>
+    <script src="js/actions.js"></script>
+    <script src="js/assistance.js"></script>
+    <script src="js/animation.js"></script>
+    <script>
+        $(function () {
+            getNames();
+            openTab();
+            getIBAN();
+            i18nInit();
+        });
+    </script>
 </head>
 
 <body>
-     <!--Add buttons to initiate auth sequence and sign out-->
-     <button id="authorize_button" style="display: none;">Authorize</button>
-     <button id="signout_button" style="display: none;">Sign Out</button>
-    <section>
+    <div id="tap" class="hidden"></div>
+    <div id="swipe" class="hidden"></div>
+    <section id="loading">
+        <img src="img/loading.gif" />
+    </section>
+    <section id="main" class="wood">
+        <div id="names">
+            <span id="i18n-to"></span>
+        </div>
         <div id="tab-wrap">
             <div id="tab">
 
             </div>
         </div>
-        <div id="postal-card">
+        <div id="postal-card-wrap">
+            <div id="postal-card">
 
+            </div>
         </div>
         <div id="postal-card-back">
 
@@ -26,50 +48,63 @@
         <div id="invitation-wrap">
             <div id="invitation" class="noisy">
                 <div id="invitation-text">
-                    <span class="names">Carme i Jordi</span>
+                    <span id="i18n-engaged" class="names">Carme i Jordi</span>
                     <hr />
-                    <div class="info"><span class="date">divendres 30 juliol</span> <span class="year">2021</span></div>
+                    <div class="info"><span class="date" id="i18n-date">divendres 30 juliol</span> <span
+                            class="year">2021</span></div>
                 </div>
                 <div id="invitation-bottom">
                 </div>
             </div>
         </div>
+
         <div id="info">
             <div id="info-text">
-                <h1>Invitació</h1>
-                <span class="msg">Ens complau convidar-los a la celebració de les nostres noces
+                <h1 id="i18n-invitation">Invitació</h1>
+                <span class="msg" id="i18n-welcome">Ens complau convidar-los a la celebració de les nostres noces
                     en la Possessió del Marqués (Son Collell) a les HH:mmh</span>
-                <span class="bye">Us esperem!</span>
-                <span class="address">c/ blabla | 07XXX | Montuiri</span>
+                <span id="i18n-bye" class="bye">Us esperem!</span>
+                <span id="iban" class="address"></span>
             </div>
         </div>
 
-        <!--<div id="summary">
-                <div id="summary-text">
-                    <h1>Carme i Jordi</h1>
-                    <span class="msg">Estam molt feliços de convidar-los</span>
-                    <span class="date">Divendres 16 juliol 2021</span>
-                    <span class="info">
-                        <div id="welcome">
-                            <h1>welcome drink</h1>
-                            <span class="hour">18 h</span>
-                        </div>
-                        <div id="ceremony">
-                            <h1>cerimònia</h1>
-                            <span class="hour">19 h</span>
-                        </div>
-                        <div id="dinner">
-                            <h1>aperitiu</h1>
-                            <span class="hour">20 h</span>
-                        </div>
-                    </span>
+        <div id="summary">
+            <div id="summary-text">
+                <h1 id="i18n-engaged2">Carme i Jordi</h1>
+                <span id="i18n-proudly" class="msg">Estam molt feliços de convidar-los</span>
+                <div class="date"><span id="i18n-fulldate"></span></div>
+                <span class="info">
+                    <div id="welcome">
+                        <h1 id="i18n-welcomedrink">welcome drink</h1>
+                        <span class="hour">18:30 h</span>
+                    </div>
+                    <div id="ceremony">
+                        <h1 id="i18n-ceremony">cerimònia</h1>
+                        <span class="hour">19 h</span>
+                    </div>
+                    <div id="dinner">
+                        <h1 id="i18n-dinner">aperitiu</h1>
+                        <span class="hour">20 h</span>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+
+        <button class="i18n-assistancebutton hidden"></button>
+        <div id="assistance" class="no-display">
+            <div id="assistance-panel">
+                <div id="i18n-assistance"></div>
+                <div id="i18n-assistancewish"></div>
+
+                <div id="assistance-grid"></div>
+                <div id="actions">
+                    <button id="i18n-back">Volver</button>
+                    <button id="i18n-send" type="submit">Envia</button>
                 </div>
-            </div> -->
+            </div>
+        </div>
     </section>
-    <script src="sheets.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
-        onreadystatechange="if (this.readyState === 'complete') this.onload()">
-        </script>
 </body>
 
 </html>
