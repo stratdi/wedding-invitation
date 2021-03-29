@@ -51,8 +51,8 @@ function i18nInit() {
     }
 
     for (message in messagesLang) {
-        $( "#i18n-"+message ).text(messagesLang[message]);
-        $( ".i18n-"+message ).text(messagesLang[message]);
+        u( "#i18n-"+message ).text(messagesLang[message]);
+        u( ".i18n-"+message ).text(messagesLang[message]);
     }
 }
 

@@ -1,25 +1,25 @@
 function hide(element, wait) {
     setTimeout(function() {
-        $( element ).addClass("hidden");
+        u( element ).addClass("hidden");
     }, wait);
     remove(element, wait+2000);
 }
 
 function show(element, wait) {
     setTimeout(function() {
-        $( element ).removeClass("hidden").removeClass("no-display");
+        u( element ).removeClass("hidden").removeClass("no-display");
     }, wait);
 }
 
 function remove(element, wait) {
     setTimeout(function() {
-        $( element ).remove();
+        u( element ).remove();
     }, wait);
 }
 
 function noDisplay(element, wait) {
     setTimeout(function() {
-        $( element ).addClass("no-display");
+        u( element ).addClass("no-display");
     }, wait);
 }
 
@@ -27,7 +27,7 @@ function rotate(element, dir, wait) {
     var clazz = dir == "top" ? "rotate-top": "rotate-bottom";
 
     setTimeout(function() {
-        $( element ).addClass(clazz);
+        u( element ).addClass(clazz);
     }, wait);
 }
 
@@ -36,7 +36,7 @@ function move(element, dir, wait, out) {
     clazz = out ? clazz+"-out" : clazz;
 
     setTimeout(function() {
-        $( element ).addClass(clazz);
+        u( element ).addClass(clazz);
     }, wait);
 
     if (out) {
@@ -46,7 +46,7 @@ function move(element, dir, wait, out) {
 
 function showOnTop(element, wait) {
     setTimeout(function() {
-        $( ".show-top" ).removeClass("show-top");
-        $( element ).addClass("show-top");
+        u( ".show-top" ).removeClass("show-top");
+        u( element ).addClass("show-top");
     }, wait);
 }

@@ -1,16 +1,16 @@
 function openTab() {
-    $("#tab-wrap").on('click', function () {
+    u("#tab-wrap").on('click', function () {
         postalOpen();
     });
-    $("#tap").on('click', function () {
+    u("#tap").on('click', function () {
         postalOpen();
     });
 }
 
 function postalOpen() {
     remove("#tap", 0);
-    $(this).addClass("wrap-noshadow");
-    $("#tab").addClass("opened");
+    u(this).addClass("wrap-noshadow");
+    u("#tab").addClass("opened");
 
 
     hide("#postal-card", 2000);
@@ -29,7 +29,7 @@ function invitationSwipeLeft() {
     });
     invitationSwipe.on('swipe', function(ev) {
         remove("#swipe", 0);
-        move($(" #invitation-wrap "), 'left', 0, true);
+        move(u(" #invitation-wrap "), 'left', 0, true);
         rotate("#info", "bottom", 1500);
         rotate("#summary", "top", 1500);
         show(".i18n-assistancebutton", 1500);
@@ -37,37 +37,37 @@ function invitationSwipeLeft() {
         openAssistance();
     });
 
-    $("#info").on('click', function () {
+    u("#info").on('click', function () {
         showOnTop(this);
     });
-    $("#summary").on('click', function () {
+    u("#summary").on('click', function () {
         showOnTop(this);
     });
 }
 
 function openAssistance() {
-    $( ".i18n-assistancebutton" ).on('click', function() {
+    u( ".i18n-assistancebutton" ).on('click', function() {
         show(" #assistance ");
     });
-    $( "#i18n-back" ).on('click', function() {
+    u( "#i18n-back" ).on('click', function() {
         noDisplay( '#assistance');
     });
 
-    $( "#i18n-send ").on('click', function() {
+    u( "#i18n-send ").on('click', function() {
         notifyAll();
     });
 }
 
 function notifyAll() {
-    $( ".assistance-item" ).each(function() {
-        var name = $( this ).find( ".guest-name" ).data( "guest" );
-        var assist = $( this ).find( ".assistance-sel" ).data( "assist" );
+    u( ".assistance-item" ).each(function(item) {
+        var name = u( item ).find( ".guest-name" ).data( "guest" );
+        var assist = u( item ).find( ".assistance-sel" ).data( "assist" );
 
         if (assist != null) {
-            $( this ).removeClass("assistance-loaded");
-            $( this ).removeClass("assistance-error");
-            $( this ).addClass("assistance-loading");
-            notify(this, name, assist);
+            u( item ).removeClass("assistance-loaded");
+            u( item ).removeClass("assistance-error");
+            u( item ).addClass("assistance-loading");
+            notify(item, name, assist);
         }
     });
 }

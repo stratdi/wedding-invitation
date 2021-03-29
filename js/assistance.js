@@ -17,12 +17,12 @@ var assistanceDiv = `
 function initAssitance() {
     window.GUESTS.forEach(addGuest);
 
-    $('input[name^="assistance-"]').on('click', function() {
-        $( this ).closest( ".assistance-sel" ).data("assist", $( this ).val());
+    u('input[name^="assistance-"]').on('click', function() {
+        u( this ).closest( ".assistance-sel" ).data("assist", this.defaultValue);
     });
 }
 
 function addGuest(value, index, array) {
     assist = assistanceDiv.replaceAll("{name}", value).replaceAll("{index}", index);
-    $( "#assistance-grid" ).append(assist);
+    u( "#assistance-grid" ).append(assist);
 }

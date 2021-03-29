@@ -26,8 +26,8 @@ function loadNames(names) {
     GUESTS = names;
     move("#loading", "left", 0, true);
     var namesNormalized = names.join(', ').replace(/, ([^,]*)$/, and+'$1');
-    var msg = $("#names span").text() + namesNormalized;
-    $("#names span").text(msg);
+    var msg = u("#names span").text() + namesNormalized;
+    u("#names span").text(msg);
     show("#tap", 3000);
 }
 
@@ -39,11 +39,11 @@ function notify(element, name, assist) {
     fetch(`${SCRIPT_URL}?id=${id}&name=${name}&assist=${assist}`)
     .then((response) => {
         if (response.ok) {
-            $( element ).removeClass("assistance-loading");
-            $( element ).addClass("assistance-loaded");
+            u( element ).removeClass("assistance-loading");
+            u( element ).addClass("assistance-loaded");
         } else {
-            $( element ).removeClass("assistance-loading");
-            $( element ).addClass("assistance-error");
+            u( element ).removeClass("assistance-loading");
+            u( element ).addClass("assistance-error");
         }
     }).catch(err => console.error(err));
 }
@@ -56,7 +56,7 @@ function getIBAN() {
         .then(res => res.json())
         .then((iban) => {
             if (iban != null) {
-                $( "#iban ").text(`IBAN: ${iban}`);
+                u( "#iban ").text(`IBAN: ${iban}`);
             }
         }).catch(err => console.error(err));
     }
