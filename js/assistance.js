@@ -23,6 +23,6 @@ function initAssitance() {
 }
 
 function addGuest(value, index, array) {
-    assist = assistanceDiv.replaceAll("{name}", value).replaceAll("{index}", index);
+    assist = assistanceDiv.replace(/{name}/g, value).replace(/{index}/g, index);
     u( "#assistance-grid" ).append(assist);
 }
