@@ -29,6 +29,7 @@ function loadNames(names) {
     var msg = u("#names span").text() + namesNormalized;
     u("#names span").text(msg);
     show("#tap", 3000);
+    initAssitance();
 }
 
 function notify(element, name, assist) {

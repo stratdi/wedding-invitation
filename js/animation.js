@@ -19,8 +19,10 @@ function postalOpen() {
     hide("#names", 2000);
     move("#invitation-wrap", "left", 3500, false);
     show("#swipe", 7000);
-    initAssitance();
-    invitationSwipeLeft();
+
+    setTimeout(function() {
+        invitationSwipeLeft();
+    }, 3500);
 }
 
 function invitationSwipeLeft() {
