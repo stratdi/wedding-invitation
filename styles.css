@@ -522,11 +522,11 @@ section {
     text-decoration: underline;
 }
 input[type='radio']:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    top: -15px;
+    left: -10px;
     position: relative;
     background-color: #d1d3d1;
     content: '';
@@ -536,17 +536,7 @@ input[type='radio']:after {
 }
 
 input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
-    position: relative;
     background-color: var(--button-hover-color);
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
 }
 
 /* */
