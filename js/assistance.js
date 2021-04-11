@@ -3,12 +3,12 @@ var assistanceDiv = `
         <span class="guest-name" data-guest="{name}">{name}</span>
         <div class="assistance-sel">
             <div class="option">
-                <input type="radio" id="yes" name="assistance-{index}" value="true">
-                <label for="yes">Sí</label>
+                <input type="radio" id="yes-{index}" name="assistance-{index}" value="true">
+                <label for="yes-{index}">Sí</label>
             </div>
             <div class="option">
-                <input type="radio" id="no" name="assistance-{index}" value="false">
-                <label for="no">No</label>
+                <input type="radio" id="no-{index}" name="assistance-{index}" value="false">
+                <label for="no-{index}">No</label>
             </div>
         </div>
     </div>
