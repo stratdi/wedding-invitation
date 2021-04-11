@@ -15,6 +15,7 @@ var assistanceDiv = `
 `;
 
 function initAssitance() {
+    console.log("Me ejecuto");
     window.GUESTS.forEach(addGuest);
 
     u('input[name^="assistance-"]').on('click', function() {
