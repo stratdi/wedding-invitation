@@ -438,7 +438,8 @@ section {
     top: 50%;
     left: 49.90%;
     transform: translate(-50%, -50%); 
-    width:50%;
+    width:calc(50% - 18vh);
+    font-size: calc(1vh + 2vw);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-radius: 5px;
 
@@ -484,10 +485,10 @@ section {
 
 #i18n-assistance, #i18n-assistancewish {
     font-family: 'AvantGarde';
-    font-size:20px;
 }
 
 #actions {
+    padding-top: 40px;
     text-align: right;
 }
 
