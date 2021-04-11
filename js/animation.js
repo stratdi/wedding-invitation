@@ -19,6 +19,7 @@ function postalOpen() {
     hide("#names", 2000);
     move("#invitation-wrap", "left", 3500, false);
     show("#swipe", 7000);
+    initAssitance();
     invitationSwipeLeft();
 }
 
@@ -33,7 +34,6 @@ function invitationSwipeLeft() {
         rotate("#info", "bottom", 1500);
         rotate("#summary", "top", 1500);
         show(".i18n-assistancebutton", 1500);
-        initAssitance();
         openAssistance();
     });
 
