@@ -373,10 +373,11 @@ section {
 }
 #summary-text .info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     grid-auto-rows: minmax(100px, auto);
-    margin-left:-205px
+    margin-left: -220px;
+    margin-right: 20px;
 }
 #summary-text .info h1 {
     font-family: 'Hijrnotes';
@@ -386,7 +387,7 @@ section {
     margin:0px;
     padding-left: 0px; 
     display:block;
-    height: 40px;
+    height: 55px;
     text-align: center;
 }
 #summary-text .info .hour {
@@ -394,7 +395,8 @@ section {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 14px;
-    padding-left:110px;
+    text-align: center;
+    display: inherit;
 }
 
 /**
